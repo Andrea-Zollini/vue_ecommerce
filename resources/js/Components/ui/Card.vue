@@ -3,11 +3,13 @@
         <div
             class="w-full overflow-hidden bg-gray-200 rounded-md aspect-h-1 aspect-w-1 lg:aspect-none group-hover:opacity-75 lg:h-80"
         >
-            <img
-                :src="product.image"
-                :alt="product.description"
-                class="object-cover object-center w-full h-full lg:h-full lg:w-full"
-            />
+            <a :href="product.link">
+                <img
+                    :src="product.image"
+                    :alt="product.description"
+                    class="object-cover object-center w-full h-full lg:h-full lg:w-full"
+                />
+            </a>
         </div>
         <div class="flex justify-between mt-4">
             <div>
