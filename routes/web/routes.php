@@ -11,6 +11,7 @@ Route::get('/', [GuestController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/products', [ProductsController::class, 'index'])->name('dashboard');
+    Route::get('/products/{slug}', [ProductsController::class, 'show'])->name('product.show');
 });
 
 Route::middleware('auth')->group(function () {

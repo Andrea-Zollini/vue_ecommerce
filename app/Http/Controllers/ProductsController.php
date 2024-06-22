@@ -14,6 +14,7 @@ class ProductsController extends Controller
         $products = Product::paginate(8)->through(function ($product) {
             return [
                 'id' => $product->id,
+                'slug' => $product->slug,
                 'name' => $product->name,
                 'image' => $product->image,
                 'price' => $product->price,
@@ -21,7 +22,6 @@ class ProductsController extends Controller
                 'weight' => $product->weight,
                 'quantity' => $product->quantity,
                 'category' => $product->category,
-                // 'href' => route('products.show', $product->id),
             ];
         });
         return Inertia::render('Products', ['products' => $products]);
@@ -46,9 +46,10 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug)
     {
-        //
+        $product = Product::where('slug', $slug)->firstOrFail();
+        return Inertia::render('Product', ['product' => $product]);
     }
 
     /**
