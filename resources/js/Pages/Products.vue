@@ -16,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Products" />
 
     <AuthenticatedLayout>
         <div class="">

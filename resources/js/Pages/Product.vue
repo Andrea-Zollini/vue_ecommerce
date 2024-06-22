@@ -1,4 +1,5 @@
 <template>
+    <Head :title="product.name" />
     <div class="mt-12">
         <Link :href="'/products'">
             <div
@@ -152,7 +153,7 @@
 </template>
 
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import { Link, Head } from "@inertiajs/vue3";
 import { CheckIcon, XMarkIcon, ArrowLeftIcon } from "@heroicons/vue/20/solid";
 
 defineProps({
