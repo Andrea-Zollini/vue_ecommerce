@@ -10,7 +10,7 @@ use Inertia\Inertia;
 Route::get('/', [GuestController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+    Route::get('/products', [ProductsController::class, 'index'])->name('dashboard');
 });
 
 Route::middleware('auth')->group(function () {
