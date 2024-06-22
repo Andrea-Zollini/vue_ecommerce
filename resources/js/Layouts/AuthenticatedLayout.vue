@@ -15,7 +15,6 @@ const showingNavigationDropdown = ref(false);
     <div>
         <div class="min-h-screen bg-gray-100">
             <Header />
-            <!-- Page Content -->
             <main>
                 <slot />
             </main>

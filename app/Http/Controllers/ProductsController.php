@@ -11,7 +11,19 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(8)->through(function ($product) {
+            return [
+                'id' => $product->id,
+                'name' => $product->name,
+                'image' => $product->image,
+                'price' => $product->price,
+                'description' => $product->description,
+                'weight' => $product->weight,
+                'quantity' => $product->quantity,
+                'category' => $product->category,
+                // 'href' => route('products.show', $product->id),
+            ];
+        });
         return Inertia::render('Products', ['products' => $products]);
     }
 

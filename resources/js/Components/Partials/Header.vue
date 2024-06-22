@@ -11,7 +11,7 @@
                         <ApplicationLogo />
                     </a>
                 </div>
-                <div class="hidden lg:flex lg:gap-x-12">
+                <div class="hidden ms-auto lg:flex lg:gap-x-12">
                     <a
                         v-for="item in navigation"
                         :key="item.name"

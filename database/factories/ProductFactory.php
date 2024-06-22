@@ -17,7 +17,8 @@ class ProductFactory extends Factory
     {
         return [
             'id' => Ulid::generate(),
-            'name' => $this->faker->words(3, true),
+            'name' => $name = $this->faker->words(3, true),
+            'slug' => preg_replace('/\s+/', '-', $name),
             'description' => $this->faker->realText(200),
             'price' => $this->faker->randomFloat(2, 1, 10),
             'weight' => $this->faker->numberBetween(0, 100),
