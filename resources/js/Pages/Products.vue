@@ -9,10 +9,6 @@ import { onMounted } from "vue";
 const props = defineProps({
     products: Object,
 });
-
-onMounted(() => {
-    console.log(props.products);
-});
 </script>
 
 <template>
