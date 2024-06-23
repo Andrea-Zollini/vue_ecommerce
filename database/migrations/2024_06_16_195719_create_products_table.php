@@ -15,7 +15,7 @@ return new class extends Migration
             $table->ulid('id')->primary();
 
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->text('description');
             $table->decimal('price', 10, 2)->default(0.00);
             $table->integer('weight')->default(0)->nullable();
