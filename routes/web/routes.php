@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
@@ -12,6 +13,7 @@ Route::get('/', [GuestController::class, 'index'])->name('home');
 Route::middleware('auth')->group(function () {
     Route::get('/products', [ProductsController::class, 'index'])->name('dashboard');
     Route::get('/products/{slug}', [ProductsController::class, 'show'])->name('product.show');
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
 });
 
 Route::middleware('auth')->group(function () {

@@ -35,6 +35,11 @@
                     </div>
                 </template>
                 <template v-else>
+                    <dir>
+                        <Link :href="route('cart')" class="flex items-center">
+                            <ShoppingCartIcon class="w-6 h-6" />
+                        </Link>
+                    </dir>
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
                         <!-- Settings Dropdown -->
                         <div class="relative ms-3">
@@ -151,7 +156,11 @@ import Dropdown from "@/Components/Dropdown.vue";
 import DropdownLink from "@/Components/DropdownLink.vue";
 import { ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
-import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+import {
+    Bars3Icon,
+    XMarkIcon,
+    ShoppingCartIcon,
+} from "@heroicons/vue/24/outline";
 import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 import { Link } from "@inertiajs/vue3";
 
