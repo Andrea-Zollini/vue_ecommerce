@@ -24,20 +24,31 @@
                 € {{ product.price }}
             </p>
         </div>
-        <div class="mt-6 transition-all duration-300 ease-in-out border">
-            <a
-                :href="product.href"
-                class="relative flex items-center justify-center px-8 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200"
-                >Add to bag<span class="sr-only">, {{ product.name }}</span></a
-            >
+        <div class="mt-6">
+            <form @submit.prevent="submit()">
+                <button
+                    type="submit"
+                    class="relative flex items-center justify-center w-full px-8 py-2 text-sm font-medium text-gray-900 transition-all duration-300 ease-in-out bg-gray-100 border border-transparent rounded-md hover:bg-gray-200"
+                >
+                    Add to bag
+                </button>
+            </form>
         </div>
     </div>
 </template>
 
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import { Link, useForm } from "@inertiajs/vue3";
+import { reactive } from "vue";
 
-defineProps({
+const props = defineProps({
     product: Object,
 });
+
+const form = useForm({
+    product_id: props.product.id,
+});
+const submit = (e) => {
+    form.post(route("cart.store", { product_id: props.product.id }));
+};
 </script>
