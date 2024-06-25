@@ -46,9 +46,9 @@ const props = defineProps({
 });
 
 const form = useForm({
-    product_id: props.product.id,
+    product: props.product,
 });
 const submit = (e) => {
-    form.post(route("cart.store", { product_id: props.product.id }));
+    form.post(route("cart.add", { product: props.product }));
 };
 </script>

@@ -11,7 +11,7 @@ class CartItem extends Model
 {
     use HasFactory, HasUlids;
 
-    protected $fillable = ['cart_id', 'product_id', 'quantity'];
+    protected $fillable = ['user_id', 'product_id', 'quantity'];
 
     public function cart(): BelongsTo
     {

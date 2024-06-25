@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone_number')->nullable();
 
-            $table->foreignUlid('cart_id')->constrained()->nullable();
+            // $table->foreignUlid('cart_id')->constrained()->nullable();
 
             $table->string('street_address')->nullable();
             $table->string('city')->nullable();

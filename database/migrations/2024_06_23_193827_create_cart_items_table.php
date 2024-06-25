@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('cart_items', function (Blueprint $table) {
             $table->ulid('id')->primary();
 
-            $table->foreignUlid('cart_id')
-                ->constrained('carts')
+            $table->foreignUlid('user_id')
+                ->constrained('users')
                 ->cascadeOnDelete();
 
             $table->foreignUlid('product_id')
