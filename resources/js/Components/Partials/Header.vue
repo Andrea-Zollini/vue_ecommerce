@@ -36,7 +36,10 @@
                 </template>
                 <template v-else>
                     <dir>
-                        <Link :href="route('cart')" class="flex items-center">
+                        <Link
+                            :href="route('cart.index')"
+                            class="flex items-center"
+                        >
                             <ShoppingCartIcon class="w-6 h-6" />
                         </Link>
                     </dir>

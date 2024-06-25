@@ -344,11 +344,11 @@ import { XMarkIcon } from "@heroicons/vue/24/outline";
 import { CheckIcon, ClockIcon } from "@heroicons/vue/20/solid";
 
 const props = defineProps({
-    cart: Object,
+    cartItems: Array,
 });
 
 onMounted(() => {
-    console.log(props.cart);
+    console.log(props.cartItems);
 });
 
 const open = ref(false);
